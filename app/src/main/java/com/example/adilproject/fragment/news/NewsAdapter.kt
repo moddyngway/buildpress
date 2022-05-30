@@ -6,7 +6,9 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.adilproject.R
 import com.example.adilproject.data.model.News
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.news_item_vh.view.*
+import kotlinx.android.synthetic.main.projects_item_vh.view.*
 
 class NewsAdapter(private val newsInterface: NewsInterface) : RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
 
@@ -18,6 +20,8 @@ class NewsAdapter(private val newsInterface: NewsInterface) : RecyclerView.Adapt
         notifyDataSetChanged()
     }
 
+
+
     inner class NewsViewHolder(private val itemView: View):RecyclerView.ViewHolder(itemView){
 
         fun bind(item: News){
@@ -25,6 +29,11 @@ class NewsAdapter(private val newsInterface: NewsInterface) : RecyclerView.Adapt
                 newsInterface.setOnClick(item)
             }
             itemView.newsTitle.text = item.title
+            itemView.newsCategory.text = item.category_str
+            itemView.newsText.text = item.text
+            Picasso.get()
+                .load(item.image)
+                .into(itemView.newsImage)
         }
     }
 

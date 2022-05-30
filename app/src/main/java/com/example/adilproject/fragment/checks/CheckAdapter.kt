@@ -1,4 +1,4 @@
-package com.example.adilproject.fragment.projects
+package com.example.adilproject.fragment.checks
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,8 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.adilproject.R
 import com.example.adilproject.data.model.Check
-import com.example.adilproject.data.model.News
-import kotlinx.android.synthetic.main.news_item_vh.view.*
+import kotlinx.android.synthetic.main.check_item_vh.view.*
 
 class CheckAdapter : RecyclerView.Adapter<CheckAdapter.NewsViewHolder>() {
 
@@ -22,12 +21,15 @@ class CheckAdapter : RecyclerView.Adapter<CheckAdapter.NewsViewHolder>() {
     inner class NewsViewHolder(private val itemView: View): RecyclerView.ViewHolder(itemView){
 
         fun bind(item: Check){
-            itemView.newsTitle.text = item.category
+            itemView.checkProject.text = item.project
+            itemView.checkPrice.text = item.price.toString() + " сом"
+            itemView.checkCategory.text = item.category
+            itemView.checkDate.text = item.date
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewsViewHolder {
-        val v = LayoutInflater.from(parent.context).inflate(R.layout.news_item_vh, parent, false)
+        val v = LayoutInflater.from(parent.context).inflate(R.layout.check_item_vh, parent, false)
         return NewsViewHolder(v)
     }
 

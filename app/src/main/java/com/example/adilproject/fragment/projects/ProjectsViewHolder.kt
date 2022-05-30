@@ -1,4 +1,4 @@
-package com.example.adilproject.fragment.history
+package com.example.adilproject.fragment.projects
 
 import android.view.LayoutInflater
 import android.view.View
@@ -9,7 +9,7 @@ import com.example.adilproject.data.model.Project
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.projects_item_vh.view.*
 
-class ProjectsAdapter : RecyclerView.Adapter<ProjectsAdapter.ProjectsViewHolder>() {
+class ProjectsAdapter(private val projectsInterface: ProjectInterface) : RecyclerView.Adapter<ProjectsAdapter.ProjectsViewHolder>() {
 
     private val projectsList = mutableListOf<Project>()
 
@@ -25,6 +25,12 @@ class ProjectsAdapter : RecyclerView.Adapter<ProjectsAdapter.ProjectsViewHolder>
             Picasso.get()
                 .load(item.image)
                 .into(itemView.projectImage)
+            itemView.projectTitle.text = item.title
+            itemView.projectCategory.text = item.category_str
+            itemView.projectDesc.text = item.description
+            itemView.setOnClickListener {
+                projectsInterface.setOnClick(item)
+            }
         }
 
     }

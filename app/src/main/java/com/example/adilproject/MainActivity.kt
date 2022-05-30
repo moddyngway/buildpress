@@ -6,7 +6,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.example.adilproject.fragment.news.NewsFragment
-import com.example.adilproject.fragment.projects.CheckFragment
+import com.example.adilproject.fragment.checks.CheckFragment
 import com.google.android.material.tabs.TabLayoutMediator
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -18,8 +18,10 @@ class MainActivity : AppCompatActivity() {
         val adapter = FragmentPagerAdapter(this)
         main_view_pager.adapter = adapter
 
+        val myNavTabs = arrayOf("Проекты", "Блог", "История покупок")
+
         TabLayoutMediator(tabLayoutViewPager, main_view_pager) { tab, position ->
-            tab.text = position.toString()
+            tab.text = myNavTabs[position]
         }.attach()
     }
 }
@@ -31,9 +33,9 @@ class FragmentPagerAdapter(fm: FragmentActivity) : FragmentStateAdapter(fm) {
 
     override fun createFragment(position: Int): Fragment {
         return when (position) {
-            0 -> CheckFragment()
-            1 -> com.example.adilproject.fragment.history.ProjectFragment()
-            else -> NewsFragment()
+            0 -> com.example.adilproject.fragment.projects.ProjectFragment()
+            1 -> NewsFragment()
+            else -> CheckFragment()
         }
     }
 }

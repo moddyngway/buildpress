@@ -15,7 +15,8 @@
         android:id="@+id/tabLayoutViewPager"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:backgroundTint="@color/purple_200"
+        android:backgroundTint="#FFC400"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>

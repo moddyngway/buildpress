@@ -1,15 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-
-    <ImageView
-        android:id="@+id/projectImage"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_width="100dp"
-        android:layout_height="100dp"/>
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="20dp"
+    app:cardCornerRadius="20dp"
+    android:padding="5dp"
+    android:layout_margin="10dp">
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/projectImage"
+            android:layout_width="211dp"
+            android:layout_height="164dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="162dp"
+            android:layout_marginTop="9dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="15dp" />
+
+        <TextView
+            android:id="@+id/projectTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="10dp"
+            android:maxWidth="145dp"
+            android:layout_marginStart="15dp"
+
+            android:text="asdasdddddddddddddddddddddddddd"
+
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/projectCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/projectTitle"
+            android:layout_marginTop="15dp"
+            android:maxWidth="145dp"
+            android:layout_marginStart="15dp"
+
+            android:text="category" />
+
+        <TextView
+            android:id="@+id/projectDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/projectCategory"
+            android:layout_marginTop="15dp"
+            android:maxWidth="145dp"
+            android:layout_marginStart="15dp"
+
+            android:text="text" />
+
+
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>

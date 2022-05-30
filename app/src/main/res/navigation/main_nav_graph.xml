@@ -16,12 +16,12 @@
     </fragment>
     <fragment
         android:id="@+id/projectsFragment"
-        android:name="com.example.adilproject.fragment.projects.CheckFragment"
+        android:name="com.example.adilproject.fragment.checks.CheckFragment"
         android:label="fragment_projects"
         tools:layout="@layout/fragment_projects" />
     <fragment
         android:id="@+id/historyFragment"
-        android:name="com.example.adilproject.fragment.history.ProjectFragment"
+        android:name="com.example.adilproject.fragment.projects.ProjectFragment"
         android:label="fragment_history"
         tools:layout="@layout/fragment_history" />
 </navigation>
